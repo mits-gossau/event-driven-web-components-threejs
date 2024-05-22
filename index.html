@@ -4,9 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Example</title>
+  <style>
+    div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+    }
+  </style>
 </head>
 <body>
-  <threejs-test></threejs-test>
+  <div>
+    <threejs-test></threejs-test>
+    <threejs-test right></threejs-test>
+    <threejs-test></threejs-test>
+    <threejs-test right></threejs-test>
+    <threejs-test></threejs-test>
+    <threejs-test right></threejs-test>
+  </div>
   <script>
     Promise.all([
     import('./src/Test.js').then(module => ['threejs-test', module.default])            ]).then(elements => elements.forEach(element => {
