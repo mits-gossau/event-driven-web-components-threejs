@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example</title>
+</head>
+<body>
+  <threejs-test></threejs-test>
+  <script>
+    Promise.all([
+    import('./src/Test.js').then(module => ['threejs-test', module.default])            ]).then(elements => elements.forEach(element => {
+      if (element && !customElements.get(element[0])) customElements.define(...element)
+    }))
+  </script>
+</body>
+</html>
